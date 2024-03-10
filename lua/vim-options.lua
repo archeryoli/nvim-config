@@ -4,6 +4,7 @@ vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 vim.cmd("set number")
 vim.cmd("set nosmarttab")
+vim.cmd("set smartcase")
 vim.g.mapleader = " "
 
 ---@diagnostic disable-next-line: lowercase-global
@@ -20,6 +21,7 @@ map('n', '<leader>ff', ':Telescope find_files<CR>', {})
 map('i', '"' , '""<left>', {})
 map('i', "'" , "''<left>", {})
 map('i', '(', '()<left>', {})
+map('i', '()', '()<left>', {})
 map('i', '[', '[]<left>', {})
 map('i', '{', '{}<left>', {})
 map('i', '{<CR>', '{<CR>}<ESC>O', {})
