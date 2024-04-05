@@ -13,7 +13,6 @@ return {
 					"lua_ls",
 					"volar",
 					"tsserver",
-					"rust_analyzer",
           "pyright",
 				},
 			})
@@ -21,6 +20,13 @@ return {
 	},
 	{
 		"neovim/nvim-lspconfig",
+    opts = {
+      setup = {
+        rust_analyzer = function ()
+          return true
+        end,
+      },
+    },
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
@@ -31,9 +37,6 @@ return {
 				capabilities = capabilities,
 			})
 			lspconfig.volar.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.rust_analyzer.setup({
 				capabilities = capabilities,
 			})
       lspconfig.pyright.setup({
