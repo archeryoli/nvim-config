@@ -12,11 +12,12 @@ return {
 			indent = { enable = true },
 		})
 		require("nvim-ts-autotag").setup({
-      enable = true,
+      opts = {
+        enable_close = true,
+        enable_rename = true,
+        enable_close_on_slash = true,
+      },
       filetypes = { "html", "xml", "vue" },
-      enable_rename = true,
-      enable_close = true,
-      enable_close_on_slash = true
     })
 	end,
 }

@@ -15,6 +15,11 @@ M.on_attach = function(client, bufnr)
   map("n", "<leader>sh", vim.lsp.buf.signature_help, opts "Lsp Show signature help")
   map("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts "Lsp Add workspace folder")
   map("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, opts "Lsp Remove workspace folder")
+  map("n", "<leader>fh", function()
+    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+    vim.notify("Inlay hints " .. (vim.lsp.inlay_hint.is_enabled() and "enabled" or "disabled"))
+  end, opts "Toggle inlay hints"
+  );
 
   map("n", "<leader>wl", function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
